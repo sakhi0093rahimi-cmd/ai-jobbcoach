@@ -4,6 +4,10 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "AI Jobbcoach Sverige",
   description: "Skapa CV och personligt brev med AI",
+
+  verification: {
+    google: "naxgNr8lBoSA67HkMdIhY_x_3WQUaGduqXGhHQOB5mw",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
