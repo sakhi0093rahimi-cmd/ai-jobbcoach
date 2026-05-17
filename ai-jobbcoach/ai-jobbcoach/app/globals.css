@@ -38,3 +38,105 @@ textarea.large { min-height: 150px; }
   h1 { font-size: 40px; }
   .hero { padding-top: 45px; }
 }
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .cv-print-area,
+  .cv-print-area * {
+    visibility: visible;
+  }
+
+  .cv-print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 210mm;
+    min-height: 297mm;
+    background: white;
+    padding: 15mm;
+    box-sizing: border-box;
+  }
+
+  .cv-print-area > * {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-height: auto !important;
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+}
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+
+  #cv-preview,
+  #cv-preview * {
+    visibility: visible !important;
+  }
+
+  #cv-preview {
+  left: 8mm !important;
+top: 8mm !important;
+width: 210mm !important;
+    height: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+  }
+
+  #cv-preview > div {
+    width: 210mm !important;
+    height: 297mm !important;
+    min-height: 297mm !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    transform: scale(1.00);
+    transform-origin: top left;
+  }
+  
+#cv-preview aside {
+  background: #1f2937 !important;
+  color: white !important;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+#cv-preview * {
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+}
+@media (max-width: 900px) {
+  main nav {
+    flex-wrap: wrap;
+  }
+
+  main section {
+    max-width: 100% !important;
+  }
+
+  a, button {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  main {
+    overflow-x: hidden;
+  }
+}
