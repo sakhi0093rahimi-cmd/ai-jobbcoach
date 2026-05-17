@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import ModernCV from "./templates/ModernCV";
 import ClassicCV from "./templates/ClassicCV";
 import MinimalCV from "./templates/MinimalCV";
 import EngineeringCV from "./templates/EngineeringCV";
 
-export default function CVGeneratorPage() {
+function CVGeneratorContent() {
     const searchParams = useSearchParams();
   const [selectedTemplate, setSelectedTemplate] = useState("modern");
   useEffect(() => {
@@ -1225,3 +1225,10 @@ const smallSquareButton: React.CSSProperties = {
   cursor: "pointer",
   fontSize: "20px",
 };
+export default function CVGeneratorPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CVGeneratorContent />
+    </Suspense>
+  );
+}
