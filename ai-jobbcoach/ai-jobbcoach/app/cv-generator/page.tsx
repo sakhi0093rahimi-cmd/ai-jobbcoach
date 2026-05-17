@@ -243,69 +243,72 @@ const previewForm = hasUserContent
     >
       {/* TOP BAR */}
       <header
-        style={{
-          height: "70px",
-          background: "#18181b",
-          color: "white",
-          display: "grid",
-          gridTemplateColumns: "180px 1fr 320px",
-          alignItems: "center",
-          padding: "0 18px",
-          position: "sticky",
-          top: 0,
-          zIndex: 50,
-        }}
-      >
-        <button
-          style={{
-            width: "90px",
-            height: "44px",
-            background: "transparent",
-            color: "white",
-            border: "1px solid #3f3f46",
-            borderRadius: "6px",
-            fontWeight: "bold",
-            cursor: "pointer",
-          }}
-        >
-          ← CV:n
-        </button>
-
-        <div
-          style={{
-            textAlign: "center",
-            fontWeight: "bold",
-          }}
-        >
-          CV utan titel ☁
-        </div>
-
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "flex-end",
-            gap: "8px",
-          }}
-        >
-          <button style={topIconButton}>↶</button>
-          <button style={topIconButton}>↷</button>
-          <button style={topIconButton}>SV</button>
-          <button
-  onClick={() => window.print()}
   style={{
-    background: "#2563eb",
+    height: "70px",
+    background: "#18181b",
     color: "white",
-    border: "none",
-    borderRadius: "6px",
-    padding: "10px 16px",
-    fontWeight: "bold",
-    cursor: "pointer",
+    display: "grid",
+    gridTemplateColumns: "220px 1fr 220px",
+    alignItems: "center",
+    padding: "0 18px",
+    position: "sticky",
+    top: 0,
+    zIndex: 50,
+    gap: "12px",
   }}
 >
-  Ladda ned
-</button>
-        </div>
-      </header>
+  <a
+    href="/"
+    style={{
+      color: "white",
+      textDecoration: "none",
+      fontWeight: "bold",
+      fontSize: "14px",
+      background: "#2563eb",
+      padding: "10px 14px",
+      borderRadius: "8px",
+      width: "fit-content",
+    }}
+  >
+    ← Startsida
+  </a>
+
+  <div
+    style={{
+      textAlign: "center",
+      fontWeight: "bold",
+    }}
+  >
+    CV utan titel ☁
+  </div>
+
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "flex-end",
+      gap: "8px",
+    }}
+  >
+    <button style={topIconButton}>↶</button>
+    <button style={topIconButton}>↷</button>
+    <button style={topIconButton}>SV</button>
+
+    <button
+      onClick={() => window.print()}
+      style={{
+        background: "#2563eb",
+        color: "white",
+        border: "none",
+        borderRadius: "6px",
+        padding: "10px 16px",
+        fontWeight: "bold",
+        cursor: "pointer",
+      }}
+    >
+      Ladda ned
+    </button>
+  </div>
+</header>
 
       {/* WORKSPACE */}
       <div
