@@ -353,13 +353,13 @@ export default function Home() {
 
         <div style={templateGrid}>
           {[
-            [t.modern, "Populär", "#0f2742"],
-            [t.classic, "", "#2f5d50"],
-            [t.minimal, "", "#111827"],
-            [t.engineering, "Ny", "#2f80ed"],
-            [t.healthcare, "", "#4f8f7a"],
-          ].map(([name, label, color]) => (
-            <a href="/cv-generator" key={name} style={templateCard}>
+  ["modern", t.modern, "Populär", "#0f2742"],
+  ["classic", t.classic, "", "#2f5d50"],
+  ["minimal", t.minimal, "", "#111827"],
+  ["engineering", t.engineering, "Ny", "#2f80ed"],
+  ["modern", t.healthcare, "", "#4f8f7a"],
+].map(([slug, name, label, color]) => (
+            <a href={`/cv-generator?template=${slug}`} key={String(name)} style={templateCard}>
               {label && <span style={cardLabel}>{label}</span>}
               <div style={templatePreview}>
                 <div style={{ ...tinySidebar, background: color }}></div>

@@ -1,13 +1,27 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import ModernCV from "./templates/ModernCV";
 import ClassicCV from "./templates/ClassicCV";
 import MinimalCV from "./templates/MinimalCV";
 import EngineeringCV from "./templates/EngineeringCV";
 
 export default function CVGeneratorPage() {
+    const searchParams = useSearchParams();
   const [selectedTemplate, setSelectedTemplate] = useState("modern");
+  useEffect(() => {
+  const template = searchParams.get("template");
+
+  if (
+    template === "modern" ||
+    template === "classic" ||
+    template === "minimal" ||
+    template === "engineering"
+  ) {
+    setSelectedTemplate(template);
+  }
+}, [searchParams]);
   const [cvLanguage, setCvLanguage] = useState("Svenska");
   const [isGenerating, setIsGenerating] = useState(false);
 
