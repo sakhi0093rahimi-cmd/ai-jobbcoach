@@ -243,6 +243,7 @@ const previewForm = hasUserContent
     >
       {/* TOP BAR */}
       <header
+  className="cv-generator-header"
   style={{
     height: "70px",
     background: "#18181b",
@@ -312,9 +313,10 @@ const previewForm = hasUserContent
 
       {/* WORKSPACE */}
       <div
-        style={{
+  className="cv-generator-workspace"
+  style={{
           display: "grid",
-          gridTemplateColumns: "760px minmax(640px, 1fr) 230px",
+          gridTemplateColumns: "minmax(0, 760px) minmax(0, 1fr) 230px",
           minHeight: "calc(100vh - 70px)",
         }}
       >
