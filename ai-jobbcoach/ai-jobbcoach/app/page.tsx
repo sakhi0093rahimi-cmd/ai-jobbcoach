@@ -18,6 +18,7 @@ const text = {
     navLetter: "Personligt brev",
     navTemplates: "Mallar",
     navPricing: "Priser",
+    navContact: "Kontakt",
     login: "Logga in",
     cta: "Skapa CV gratis",
     badge: "#1 AI-driven CV och personligt brev",
@@ -77,6 +78,7 @@ const text = {
     navLetter: "Cover Letter",
     navTemplates: "Templates",
     navPricing: "Pricing",
+    navContact: "Contact",
     login: "Log in",
     cta: "Create CV for free",
     badge: "#1 AI-powered CV and cover letter",
@@ -136,6 +138,7 @@ const text = {
     navLetter: "Anschreiben",
     navTemplates: "Vorlagen",
     navPricing: "Preise",
+    navContact: "Kontakt",
     login: "Einloggen",
     cta: "Lebenslauf kostenlos erstellen",
     badge: "#1 KI-Lebenslauf und Anschreiben",
@@ -276,6 +279,7 @@ export default function Home() {
           <a href="#letter" style={navLink}>{t.navLetter}</a>
           <a href="#templates" style={navLink}>{t.navTemplates}</a>
           <a href="#pricing" style={navLink}>{t.navPricing}</a>
+          <a href="/kontakt" style={navLink}>{t.navContact}</a>
         </div>
 
         <div style={rightNav}>
@@ -352,30 +356,229 @@ export default function Home() {
         <p style={sectionSub}>{t.chooseTemplatesSub}</p>
 
         <div style={templateGrid}>
-          {[
-  ["modern", t.modern, "Populär", "#0f2742"],
-  ["classic", t.classic, "", "#2f5d50"],
-  ["minimal", t.minimal, "", "#111827"],
-  ["engineering", t.engineering, "Ny", "#2f80ed"],
-  ["modern", t.healthcare, "", "#4f8f7a"],
-].map(([slug, name, label, color]) => (
-            <a href={`/cv-generator?template=${slug}`} key={String(name)} style={templateCard}>
-              {label && <span style={cardLabel}>{label}</span>}
-              <div style={templatePreview}>
-                <div style={{ ...tinySidebar, background: color }}></div>
-                <div style={tinyContent}>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-              </div>
-              <strong>{name}</strong>
-              <div style={dots}>
-                <span></span><span></span><span></span><span></span>
-              </div>
-            </a>
-          ))}
-        </div>
+  {[
+    {
+      slug: "modern",
+      name: t.modern,
+      label: "Populär",
+      color: "#0f2742",
+      description: "Modern och professionell CV-mall som passar de flesta jobb.",
+    },
+    {
+      slug: "classic",
+      name: t.classic,
+      label: "",
+      color: "#2f5d50",
+      description: "Tydlig och enkel CV-mall för traditionella ansökningar.",
+    },
+    {
+      slug: "minimal",
+      name: t.minimal,
+      label: "",
+      color: "#111827",
+      description: "Ren och minimalistisk design med fokus på innehållet.",
+    },
+    {
+      slug: "engineering",
+      name: t.engineering,
+      label: "Ny",
+      color: "#2f80ed",
+      description: "Teknisk CV-mall för ingenjörer, IT, CAD och projektroller.",
+    },
+    {
+      slug: "modern",
+      name: t.healthcare,
+      label: "",
+      color: "#4f8f7a",
+      description: "Lugn och tydlig mall för vård, omsorg och serviceyrken.",
+    },
+  ].map((template) => (
+    <a
+      href={`/cv-generator?template=${template.slug}`}
+      key={template.name}
+      style={{
+        ...templateCard,
+        textDecoration: "none",
+        color: "#111827",
+      }}
+    >
+      {template.label && (
+        <span style={cardLabel}>{template.label}</span>
+      )}
+
+    <div
+  style={{
+    height: "170px",
+    border: "1px solid #dbeafe",
+    borderRadius: "10px",
+    overflow: "hidden",
+    background: "#ffffff",
+    display: "grid",
+    gridTemplateColumns: template.slug === "minimal" ? "1fr" : "46px 1fr",
+    fontSize: "6px",
+    lineHeight: 1.25,
+  }}
+>
+  {template.slug !== "minimal" && (
+    <div
+      style={{
+        background: template.color,
+        color: "white",
+        padding: "10px 5px",
+        display: "flex",
+        flexDirection: "column",
+        gap: "6px",
+      }}
+    >
+      <div
+        style={{
+          width: "22px",
+          height: "22px",
+          borderRadius: "999px",
+          background: "#e2e8f0",
+          margin: "0 auto 5px",
+        }}
+      />
+      <strong style={{ fontSize: "5px" }}>KONTAKT</strong>
+      <span>070 123 45 67</span>
+      <span>alex@mail.com</span>
+      <strong style={{ fontSize: "5px", marginTop: "4px" }}>
+        KOMPETENS
+      </strong>
+      <span>Projekt</span>
+      <span>Analys</span>
+      <span>Teamwork</span>
+    </div>
+  )}
+
+  <div
+    style={{
+      padding: template.slug === "minimal" ? "14px" : "12px 10px",
+      background:
+        template.slug === "engineering"
+          ? "linear-gradient(135deg, #ffffff 0%, #ffffff 68%, #eaf3ff 68%)"
+          : template.name === t.healthcare
+          ? "linear-gradient(135deg, #ffffff 0%, #ffffff 72%, #ecfdf5 72%)"
+          : "#ffffff",
+      color: "#0f172a",
+    }}
+  >
+    <h3
+      style={{
+        margin: 0,
+        fontSize: template.slug === "minimal" ? "12px" : "10px",
+        lineHeight: 1,
+        color: template.slug === "minimal" ? "#111827" : template.color,
+        letterSpacing: "0.5px",
+      }}
+    >
+      {template.slug === "engineering"
+        ? "ALEXANDER BERG"
+        : template.name === t.healthcare
+        ? "ELIN ANDERSSON"
+        : template.slug === "classic"
+        ? "ANNA KARLSSON"
+        : template.slug === "minimal"
+        ? "Sara Lind"
+        : "Ditt Namn"}
+    </h3>
+
+    <p
+      style={{
+        margin: "4px 0 9px",
+        fontSize: "5.5px",
+        fontWeight: 800,
+        color: template.slug === "engineering" ? "#2f80ed" : "#334155",
+        textTransform: "uppercase",
+        letterSpacing: "0.8px",
+      }}
+    >
+      {template.slug === "engineering"
+        ? "Mechanical Engineer"
+        : template.name === t.healthcare
+        ? "Undersköterska"
+        : template.slug === "classic"
+        ? "Administratör"
+        : template.slug === "minimal"
+        ? "Frontend utvecklare"
+        : "Jobbtitel"}
+    </p>
+
+    {[
+      [
+        "PROFIL",
+        template.slug === "engineering"
+          ? "Lösningsorienterad ingenjör med erfarenhet av teknisk analys."
+          : template.name === t.healthcare
+          ? "Trygg och omtänksam vårdpersonal med fokus på människor."
+          : "Professionell kandidat med tydlig erfarenhet och stark drivkraft.",
+      ],
+      [
+        "ARBETSLIVSERFARENHET",
+        template.slug === "engineering"
+          ? "Nordic Engineering AB · CAD, dokumentation och projekt."
+          : template.name === t.healthcare
+          ? "Äldreboende Solrosen · omsorg, dokumentation och teamarbete."
+          : "Företag AB · ansvar, service och resultat i dagligt arbete.",
+      ],
+      [
+        "UTBILDNING",
+        template.slug === "engineering"
+          ? "Civilingenjör i maskinteknik"
+          : template.name === t.healthcare
+          ? "Vård- och omsorgsprogrammet"
+          : "Relevant utbildning och kurser",
+      ],
+    ].map(([heading, text]) => (
+      <div
+        key={heading}
+        style={{
+          borderTop: "1px solid #e2e8f0",
+          paddingTop: "5px",
+          marginTop: "5px",
+        }}
+      >
+        <strong
+          style={{
+            display: "block",
+            fontSize: "5.5px",
+            color: template.slug === "minimal" ? "#111827" : template.color,
+            marginBottom: "3px",
+          }}
+        >
+          {heading}
+        </strong>
+        <p style={{ margin: 0, fontSize: "5px", color: "#475569" }}>
+          {text}
+        </p>
+      </div>
+    ))}
+  </div>
+</div>
+
+      <strong>{template.name}</strong>
+
+      <p
+        style={{
+          margin: "10px 0 0",
+          color: "#64748b",
+          fontSize: "13px",
+          lineHeight: 1.45,
+          fontWeight: 600,
+        }}
+      >
+        {template.description}
+      </p>
+
+      <div style={dots}>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </a>
+  ))}
+</div>
 
         <a href="/cv-generator" style={seeAll}>{t.seeAll} →</a>
       </section>
@@ -457,6 +660,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
 
       <section id="pricing" style={bottomCta}>
         <div>
@@ -767,19 +971,24 @@ const sectionSub: React.CSSProperties = {
 
 const templateGrid: React.CSSProperties = {
   display: "grid",
-  gridTemplateColumns: "repeat(5, 1fr)",
-  gap: "18px",
+  gridTemplateColumns: "repeat(5, minmax(210px, 1fr))",
+  gap: "22px",
+  alignItems: "stretch",
 };
 
 const templateCard: React.CSSProperties = {
   position: "relative",
   background: "white",
   border: "1px solid #dbeafe",
-  borderRadius: "16px",
+  borderRadius: "18px",
   padding: "18px",
   textDecoration: "none",
   color: "#0f172a",
-  boxShadow: "0 15px 35px rgba(15, 23, 42, 0.06)",
+  boxShadow: "0 18px 45px rgba(15, 23, 42, 0.08)",
+  minHeight: "390px",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
 };
 
 const cardLabel: React.CSSProperties = {
@@ -795,14 +1004,15 @@ const cardLabel: React.CSSProperties = {
 };
 
 const templatePreview: React.CSSProperties = {
-  height: "160px",
+  height: "230px",
   background: "#f8fafc",
-  borderRadius: "12px",
-  marginBottom: "14px",
+  borderRadius: "14px",
+  marginBottom: "16px",
   display: "grid",
-  gridTemplateColumns: "48px 1fr",
+  gridTemplateColumns: "58px 1fr",
   overflow: "hidden",
-  border: "1px solid #e2e8f0",
+  border: "1px solid #dbeafe",
+  boxShadow: "0 10px 25px rgba(15, 23, 42, 0.08)",
 };
 
 const tinySidebar: React.CSSProperties = {};
