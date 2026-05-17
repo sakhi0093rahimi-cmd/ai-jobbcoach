@@ -12,11 +12,11 @@
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "@vercel/analytics": "^2.0.1",
     "next": "latest",
     "openai": "latest",
     "react": "latest",
     "react-dom": "latest",
     "typescript": "latest"
-  },
-  "devDependencies": {}
+  }
 }
