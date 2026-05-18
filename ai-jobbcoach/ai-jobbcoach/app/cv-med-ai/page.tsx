@@ -172,6 +172,9 @@ export default function CvMedAiPage() {
         <h2>Redo att skapa ditt CV?</h2>
         <p>Kom igång med AI Jobbcoach och skapa ditt CV gratis.</p>
         <a href="/cv-generator" style={primaryButton}>Skapa CV gratis</a>
+        <a href="/skapa-cv-gratis" style={secondaryButton}>
+  Läs mer om att skapa CV gratis
+</a>
       </section>
     </main>
   );
