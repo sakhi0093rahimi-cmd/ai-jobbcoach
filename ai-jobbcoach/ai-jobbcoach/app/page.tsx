@@ -275,12 +275,13 @@ export default function Home() {
         </a>
 
         <div style={navLinks}>
-          <a href="/cv-generator" style={navLink}>{t.navCv}</a>
-          <a href="#letter" style={navLink}>{t.navLetter}</a>
-          <a href="#templates" style={navLink}>{t.navTemplates}</a>
-          <a href="#pricing" style={navLink}>{t.navPricing}</a>
-          <a href="/kontakt" style={navLink}>{t.navContact}</a>
-        </div>
+  <a href="/cv-generator" style={navLink}>{t.navCv}</a>
+  <a href="/cv-med-ai" style={navLink}>CV med AI</a>
+  <a href="#letter" style={navLink}>{t.navLetter}</a>
+  <a href="#templates" style={navLink}>{t.navTemplates}</a>
+  <a href="#pricing" style={navLink}>{t.navPricing}</a>
+  <a href="/kontakt" style={navLink}>{t.navContact}</a>
+</div>
 
         <div style={rightNav}>
           <button onClick={() => setLang("sv")} style={lang === "sv" ? activeLang : langBtn}>SV</button>
