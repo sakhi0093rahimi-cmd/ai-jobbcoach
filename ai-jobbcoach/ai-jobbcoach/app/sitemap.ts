@@ -15,6 +15,12 @@ export default function sitemap() {
       priority: 0.95,
     },
     {
+  url: `${baseUrl}/skapa-cv-gratis`,
+  lastModified: new Date(),
+  changeFrequency: "weekly",
+  priority: 0.95,
+},
+    {
       url: `${baseUrl}/cv-generator`,
       lastModified: new Date(),
       changeFrequency: "weekly",
