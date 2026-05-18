@@ -7,6 +7,51 @@ export const metadata = {
 export default function CvMedAiPage() {
   return (
     <main style={page}>
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "Är AI Jobbcoach gratis?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Ja, du kan skapa CV med AI gratis och komma igång direkt med våra CV-mallar.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Hur skapar jag CV med AI?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Du fyller i dina uppgifter, väljer en CV-mall och låter AI hjälpa dig att formulera tydliga texter för profil, erfarenhet och färdigheter.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Vad betyder ATS-vänligt CV?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Ett ATS-vänligt CV är strukturerat så att det är lättare för rekryteringssystem att läsa innehållet korrekt.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Kan jag ladda ner mitt CV som PDF?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Ja, du kan skapa ett professionellt CV och ladda ner det som PDF.",
+            },
+          },
+        ],
+      }),
+    }}
+  />
+
+  <nav style={nav}></nav>
       <nav style={nav}>
         <a href="/" style={logo}>
           <span style={logoIcon}>CV</span>
