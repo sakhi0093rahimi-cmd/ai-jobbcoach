@@ -712,8 +712,8 @@ const logoIcon: React.CSSProperties = {
 
 const navLinks: React.CSSProperties = {
   display: "flex",
-  gap: "28px",
-  fontSize: "14px",
+  gap: "16px",
+  fontSize: "13px",
   fontWeight: 700,
 };
 
