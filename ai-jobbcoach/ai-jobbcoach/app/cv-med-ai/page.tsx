@@ -63,6 +63,42 @@ export default function CvMedAiPage() {
           snabbt, enkelt och gratis. Du kan börja direkt utan krångliga steg.
         </p>
       </section>
+      <section style={faqSection}>
+  <h2 style={sectionTitle}>Vanliga frågor om CV med AI</h2>
+
+  <div style={faqList}>
+    <div style={faqItem}>
+      <h3>Är AI Jobbcoach gratis?</h3>
+      <p>
+        Ja, du kan skapa CV med AI gratis och komma igång direkt med våra
+        CV-mallar.
+      </p>
+    </div>
+
+    <div style={faqItem}>
+      <h3>Hur skapar jag CV med AI?</h3>
+      <p>
+        Du fyller i dina uppgifter, väljer en CV-mall och låter AI hjälpa dig
+        att formulera tydliga texter för profil, erfarenhet och färdigheter.
+      </p>
+    </div>
+
+    <div style={faqItem}>
+      <h3>Vad betyder ATS-vänligt CV?</h3>
+      <p>
+        Ett ATS-vänligt CV är strukturerat så att det är lättare för
+        rekryteringssystem att läsa innehållet korrekt.
+      </p>
+    </div>
+
+    <div style={faqItem}>
+      <h3>Kan jag ladda ner mitt CV som PDF?</h3>
+      <p>
+        Ja, du kan skapa ett professionellt CV och ladda ner det som PDF.
+      </p>
+    </div>
+  </div>
+</section>
 
       <section style={gridSection}>
         <div style={infoBox}>
@@ -274,4 +310,23 @@ const bottomCta: React.CSSProperties = {
   borderRadius: "24px",
   background: "linear-gradient(135deg, #0f2742, #2563eb)",
   color: "white",
+};
+const faqSection: React.CSSProperties = {
+  maxWidth: "900px",
+  margin: "40px auto",
+  padding: "40px 28px",
+};
+
+const faqList: React.CSSProperties = {
+  display: "grid",
+  gap: "18px",
+  marginTop: "28px",
+};
+
+const faqItem: React.CSSProperties = {
+  background: "white",
+  border: "1px solid #dbeafe",
+  borderRadius: "18px",
+  padding: "24px",
+  lineHeight: 1.7,
 };
