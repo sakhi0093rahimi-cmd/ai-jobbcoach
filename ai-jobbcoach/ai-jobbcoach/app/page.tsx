@@ -277,7 +277,6 @@ export default function Home() {
         <div style={navLinks}>
   <a href="/cv-generator" style={navLink}>{t.navCv}</a>
   <a href="/cv-med-ai" style={navLink}>CV med AI</a>
-  <a href="/skapa-cv-gratis" style={navLink}>Skapa CV gratis</a>
   <a href="#letter" style={navLink}>{t.navLetter}</a>
   <a href="#templates" style={navLink}>{t.navTemplates}</a>
   <a href="#pricing" style={navLink}>{t.navPricing}</a>
