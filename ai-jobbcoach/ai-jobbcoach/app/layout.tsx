@@ -3,25 +3,21 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Skapa CV gratis med AI | AI Jobbcoach",
+  title: "AI Jobbcoach Sverige – Skapa CV med AI gratis",
   description:
-    "Skapa ett professionellt CV gratis online med AI. Välj moderna CV-mallar, fyll i dina uppgifter och ladda ner ditt CV som PDF.",
-
+    "Skapa ett professionellt CV med AI på några minuter. Välj moderna CV-mallar, fyll i dina uppgifter och ladda ner ett ATS-vänligt CV gratis.",
   keywords: [
-    "skapa CV",
-    "CV gratis",
-    "CV mall",
-    "CV generator",
-    "AI CV",
-    "personligt brev",
-    "CV online",
-    "CV mall gratis",
-    "skriva CV",
-    "skapa personligt brev",
+    "CV med AI",
+    "skapa CV med AI",
+    "AI CV generator",
+    "CV generator gratis",
+    "skapa CV gratis",
+    "CV mallar",
+    "ATS-vänligt CV",
+    "personligt brev med AI",
   ],
-
   openGraph: {
-    title: "Skapa CV gratis med AI | AI Jobbcoach",
+    title: "Skapa CV med AI gratis | AI Jobbcoach",
     description:
       "Bygg ett professionellt CV med AI, välj mall och ladda ner som PDF.",
     url: "https://ai-jobbcoach.vercel.app",
@@ -29,9 +25,8 @@ export const metadata: Metadata = {
     locale: "sv_SE",
     type: "website",
   },
-
   verification: {
-    google: "naxgNr8lBoSA67HkMdIhY_x_3WQUaGduqXGhHQOB5mw",
+    google: "naxgnR18oSA67HKHdIhY_x_3WQuAGduqXGHhQOB5mw",
   },
 };
 
