@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { SignInButton, UserButton } from "@clerk/nextjs";
 
 type Lang = "sv" | "en" | "de";
 
@@ -288,6 +289,12 @@ export default function Home() {
           <button onClick={() => setLang("en")} style={lang === "en" ? activeLang : langBtn}>EN</button>
           <button onClick={() => setLang("de")} style={lang === "de" ? activeLang : langBtn}>DE</button>
           <a href="/cv-generator" style={topCta}>{t.cta}</a>
+       <SignInButton mode="modal">
+  <button style={loginButton}>Logga in</button>
+</SignInButton>
+
+  <UserButton />
+
         </div>
       </nav>
 
@@ -760,6 +767,15 @@ const topCta: React.CSSProperties = {
   textDecoration: "none",
   fontWeight: 800,
   marginLeft: "8px",
+};
+const loginButton: React.CSSProperties = {
+  background: "white",
+  color: "#0f172a",
+  border: "1px solid #dbeafe",
+  padding: "10px 14px",
+  borderRadius: "10px",
+  fontWeight: 800,
+  cursor: "pointer",
 };
 
 const hero: React.CSSProperties = {
