@@ -669,6 +669,9 @@ export default function Home() {
           <p>{t.bottomSub}</p>
         </div>
         <a href="/cv-generator" style={bottomButton}>{t.cta} →</a>
+        <a href="/skapa-cv-gratis" style={bottomButtonSecondary}>
+  Läs mer om att skapa CV gratis
+</a>
       </section>
     </main>
   );
@@ -1186,4 +1189,14 @@ const bottomButton: React.CSSProperties = {
   borderRadius: "12px",
   textDecoration: "none",
   fontWeight: 900,
+};
+const bottomButtonSecondary: React.CSSProperties = {
+  background: "white",
+  color: "#2563eb",
+  padding: "14px 22px",
+  borderRadius: "12px",
+  textDecoration: "none",
+  fontWeight: 900,
+  display: "inline-block",
+  marginLeft: "12px",
 };
